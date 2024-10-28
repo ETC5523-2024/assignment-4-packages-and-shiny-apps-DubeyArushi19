@@ -1,0 +1,27 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+
+# YourPackageName
+
+**Description**: This package provides tools and a Shiny app for exploring [insert your dataset and purpose].
+
+## Installation
+You can install the package from GitHub:
+
+```{r}
+remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-DubeyArushi19")
+```
+
