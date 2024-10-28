@@ -1,0 +1,40 @@
+---
+title: "Illustrating the Use of EcoTourImpact"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{tourism_analysis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,       # Show code output by default
+  warning = FALSE,   # Suppress warnings in output
+  message = FALSE    # Suppress messages in output
+)
+```
+
+
+# Introduction
+
+The `EcoTourImpact` package provides tools to analyze the contribution of tourism to GDP across various countries and years. The data includes metrics on tourism's percentage share of total GDP, which allows users to understand the economic impact of tourism globally.
+
+##Package Installation
+
+```{r}
+# Specify a CRAN mirror and install `remotes`
+install.packages("remotes", repos = "https://cloud.r-project.org/")
+```
+
+You can install the package from GitHub:
+
+```{r}
+# Install TourismGDP
+remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-DubeyArushi19")
+
+# Load the package
+library(EcoTourImpact)
+```
+
+
