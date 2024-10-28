@@ -1,11 +1,10 @@
-Package: EcoTourimpact
+Package: EcoTourImpact
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Analyze the Contribution of Tourism to GDP
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description:This package provides functions to explore and visualize the economic contribution of tourism to GDP across multiple countries and years.
-Includes a Shiny app for interactive analysis.
+Author: Arushi Dubey
+Maintainer: adub0005@student.monash.edu
+Description:This package provides functions to explore and visualize the economic contribution of tourism to GDP across multiple countries and years.Includes a Shiny app for interactive analysis.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

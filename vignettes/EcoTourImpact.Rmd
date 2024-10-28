@@ -42,10 +42,15 @@ library(EcoTourImpact)
 After installing the package, load the necessary libraries and the dataset provided by EcoTourImpact
 
 ```{r echo=FALSE}
+#Loading the libraries
+
 library(dplyr)
 library(ggplot2)
 library(EcoTourImpact)
 
+#Reading the dataset
+
+tourism <- read_csv("data/tourism-gdp-proportion-of-total-gdp.csv")
 ```
 
 ## Exploring Tourism GDP Data
@@ -75,7 +80,6 @@ Let’s explore tourism’s impact on a specific country over time and compare i
 
 ```{r}
 # Filter data for a single country 
-library(dplyr)
 australia_data <- tourism %>%
   filter(Entity == "Australia", Year >= 2008, Year <= 2022)
 
