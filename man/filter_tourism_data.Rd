@@ -19,8 +19,3 @@ A data frame containing the filtered tourism data.
 \description{
 This function filters the tourism GDP dataset based on a specified country and year range. It is useful for extracting a subset of the data for detailed analysis or visualization.
 }
-\examples{
-data(tourism)
-filtered_data <- filter_tourism_data(tourism, "Australia", c(2008, 2020))
-head(filtered_data)
-}

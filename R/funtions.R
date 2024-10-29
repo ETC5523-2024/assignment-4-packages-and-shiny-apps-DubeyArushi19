@@ -3,14 +3,12 @@
 #' The `runMyShinyApp` function launches an interactive Shiny app that enables users to explore the tourism GDP contribution across various countries and years. Users can filter by country, adjust the year range, choose between different plot types, and view summary statistics.
 #'
 #' @return A Shiny app interface allowing users to interactively explore tourism GDP data.
-#' @examples
-#' if (interactive()) {
-#'   runMyShinyApp()
-#' }
 #' @export
-runMyShinyApp <- function() {
-  shinyApp(ui = ui, server = server)
+run_app <- function() {
+  app_dir <- system.file("EcoTourImpact", package = "EcoTourImpact")
+  shiny::runApp("inst/EcoTourImpact.r", display.mode = "normal")
 }
+
 
 #' Filter Tourism GDP Data by Country and Year Range
 #'
@@ -20,16 +18,14 @@ runMyShinyApp <- function() {
 #' @param country Character. The name of the country to filter by.
 #' @param year_range Numeric vector of length 2. The start and end year for filtering.
 #' @return A data frame containing the filtered tourism data.
-#' @examples
-#' data(tourism)
-#' filtered_data <- filter_tourism_data(tourism, "Australia", c(2008, 2020))
-#' head(filtered_data)
+#' @importFrom dplyr filter
+#' @importFrom dplyr %>%
 #' @export
 filter_tourism_data <- function(data, country, year_range) {
   data %>%
-    filter(Entity == country,
-           Year >= year_range[1],
-           Year <= year_range[2])
+    dplyr::filter(Entity == country,
+                  Year >= year_range[1],
+                  Year <= year_range[2])
 }
 
 #' Plot Tourism GDP Contribution Over Time
@@ -38,23 +34,19 @@ filter_tourism_data <- function(data, country, year_range) {
 #'
 #' @param data A data frame containing the filtered tourism GDP data.
 #' @return A ggplot2 object that displays the tourism GDP contribution over time.
-#' @examples
-#' data(tourism)
-#' australia_data <- filter_tourism_data(tourism, "Australia", c(2008, 2020))
-#' plot_tourism_gdp(australia_data)
+#' @importFrom ggplot2 ggplot aes geom_line geom_point labs theme_minimal
 #' @export
 plot_tourism_gdp <- function(data) {
-  ggplot(data, aes(x = Year, y = `GDP from tourism as a share of total GDP`)) +
-    geom_line(color = "#0073C2") +
-    geom_point(color = "#0073C2") +
-    labs(
+  ggplot2::ggplot(data, ggplot2::aes(x = Year, y = `GDP from tourism as a share of total GDP`)) +
+    ggplot2::geom_line(color = "#0073C2") +
+    ggplot2::geom_point(color = "#0073C2") +
+    ggplot2::labs(
       title = paste("Tourism GDP Contribution in", unique(data$Entity)),
       x = "Year",
       y = "Tourism GDP as % of Total GDP"
     ) +
-    theme_minimal()
+    ggplot2::theme_minimal()
 }
-
 
 #' Summarize Tourism GDP Contribution Statistics
 #'
@@ -62,14 +54,12 @@ plot_tourism_gdp <- function(data) {
 #'
 #' @param data A data frame containing the filtered tourism GDP data.
 #' @return A data frame containing the average, maximum, and minimum tourism GDP values for the specified country and year range.
-#' @examples
-#' data(tourism)
-#' australia_data <- filter_tourism_data(tourism, "Australia", c(2008, 2020))
-#' summarize_tourism_stats(australia_data)
+#' @importFrom dplyr summarize
+#' @importFrom dplyr %>%
 #' @export
 summarize_tourism_stats <- function(data) {
   data %>%
-    summarize(
+    dplyr::summarize(
       Average = mean(`GDP from tourism as a share of total GDP`, na.rm = TRUE),
       Max = max(`GDP from tourism as a share of total GDP`, na.rm = TRUE),
       Min = min(`GDP from tourism as a share of total GDP`, na.rm = TRUE)

@@ -15,8 +15,3 @@ A data frame containing the average, maximum, and minimum tourism GDP values for
 \description{
 This function calculates summary statistics (average, maximum, minimum) for tourism GDP contribution over a specified dataset. Useful for understanding the range and central tendency of tourism's economic impact.
 }
-\examples{
-data(tourism)
-australia_data <- filter_tourism_data(tourism, "Australia", c(2008, 2020))
-summarize_tourism_stats(australia_data)
-}

@@ -15,8 +15,3 @@ A ggplot2 object that displays the tourism GDP contribution over time.
 \description{
 This function generates a plot of tourism's contribution to GDP for a given country over time. Users can specify the data to be plotted, allowing for customized visualizations.
 }
-\examples{
-data(tourism)
-australia_data <- filter_tourism_data(tourism, "Australia", c(2008, 2020))
-plot_tourism_gdp(australia_data)
-}

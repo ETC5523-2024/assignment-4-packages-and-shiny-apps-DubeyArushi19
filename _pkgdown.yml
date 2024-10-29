@@ -1,0 +1,13 @@
+pkgdown:
+  url: 'https://github.com/ETC5523-2024/assignment-4-packages-and-shiny-apps-DubeyArushi19'
+  destination: docs
+  template:
+    package: pkgdown
+    bootstrap: 5
+  navbar:
+    structure:
+      left: [reference, articles]
+      right: [github]
+  home:
+    title: "Analyze the Contribution of Tourism to GDP"
+    description: "This package provides functions to explore and visualize the economic contribution of tourism to GDP across multiple countries."
