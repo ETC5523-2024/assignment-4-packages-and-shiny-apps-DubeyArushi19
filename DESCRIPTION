@@ -3,7 +3,7 @@ Type: Package
 Title: Analyze the Contribution of Tourism to GDP
 Version: 0.1.0
 Author: Arushi Dubey
-Maintainer: adub0005@student.monash.edu
+Maintainer: Arushi Dubey <adub0005@student.monash.edu>
 Description:This package provides functions to explore and visualize the economic contribution of tourism to GDP across multiple countries and years.Includes a Shiny app for interactive analysis.
 License: MIT + file LICENSE
 Encoding: UTF-8
