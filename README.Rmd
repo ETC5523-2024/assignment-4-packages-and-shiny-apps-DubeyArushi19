@@ -116,3 +116,6 @@ We welcome contributions to enhance the functionality of EcoTourImpact. If youâ€
 
 The EcoTourImpact package is licensed under the MIT License.
 
+## Documentation
+
+Kindly refer to this link for documentation with pkg  https://etc5523-2024.github.io/assignment-4-packages-and-shiny-apps-DubeyArushi19/
