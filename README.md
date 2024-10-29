@@ -1,14 +1,4 @@
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
-
-
 # EcoTourImpact
 
 **EcoTourImpact** is an R package designed to analyze the contribution of tourism to GDP across multiple countries and years. It provides data filtering, visualization tools, an interactive Shiny app, and more to help users explore trends in tourism's economic impact worldwide.
